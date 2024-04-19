@@ -46,6 +46,7 @@ public class UserService {
 
     @CacheEvict(value = Constants.userTable.TABLE_NAME, allEntries = true)
     public UserResponse createUser(CreateUserRequest user) {
+        //user'ın şifresini de hash'leseydik güzel olurdu :(
         User userEntity = modelMapper.map(user, User.class);
         User savedUser = userRepository.save(userEntity);
         log.info("User saved successfully");
