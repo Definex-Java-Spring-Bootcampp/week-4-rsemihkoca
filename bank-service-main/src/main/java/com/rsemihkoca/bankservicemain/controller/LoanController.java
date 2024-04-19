@@ -16,7 +16,7 @@ public class LoanController {
 
     private final LoanService loanService;
 
-    @GetMapping("loan")
+    @GetMapping("loans")//resource tanımlarını çoğul yapalım
     public ResponseEntity<GenericResponse<List<MergedLoanResponse>>> getAll() {
         return ResponseEntity.ok(GenericResponse.success(loanService.getAll()));
     }
